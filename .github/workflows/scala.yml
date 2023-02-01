@@ -25,9 +25,9 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'sbt'
-      - name: Build with SBT
-        run: sbt package    
+          cache: 'maven'
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
       - name: Run tests
         run: sbt test
         # Optional: This step uploads information to the GitHub dependency graph and unblocking Dependabot alerts for the repository
